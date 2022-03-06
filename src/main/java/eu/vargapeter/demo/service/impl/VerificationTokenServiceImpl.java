@@ -1,8 +1,9 @@
-package eu.vargapeter.demo.service;
+package eu.vargapeter.demo.service.impl;
 
 import eu.vargapeter.demo.model.User;
 import eu.vargapeter.demo.model.VerificationToken;
 import eu.vargapeter.demo.repository.VerificationTokenRepository;
+import eu.vargapeter.demo.service.VerificationTokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
