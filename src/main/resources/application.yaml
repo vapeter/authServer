@@ -18,14 +18,14 @@ spring:
 
 #h2 database
   datasource:
-    url: jdbc:h2:file:~/testDB
+    url: jdbc:h2:mem:testDB
     username: sa
     password: password
     driverClassName: org.h2.Driver
+
   jpa:
     spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
-    hibernate:
-      ddl-auto: update
+    defer-datasource-initialization: true
   h2:
     console:
       enabled: true
@@ -33,4 +33,4 @@ spring:
 
 app:
   mail:
-    verficationURL: http://localhost:9020/activation?token=
+    verficationURL: http://localhost:9000/activation?token=
