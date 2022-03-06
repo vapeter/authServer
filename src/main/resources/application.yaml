@@ -30,3 +30,7 @@ spring:
     console:
       enabled: true
       path: /h2
+
+app:
+  mail:
+    verficationURL: http://localhost:9020/activation?token=
