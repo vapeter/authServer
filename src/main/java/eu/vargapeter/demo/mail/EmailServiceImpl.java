@@ -16,7 +16,7 @@ public class EmailServiceImpl implements EmailService {
     @Value("${spring.mail.username:}")
     private String NOREPLY_ADDRESS;
 
-    @Value("${app.mail.verficationURL:}")
+    @Value("${app.baseURL:}")
     private String URL;
 
     @Autowired
@@ -53,7 +53,7 @@ public class EmailServiceImpl implements EmailService {
         stringBuilder.append("Köszönjük regisztrációdat! \n");
         stringBuilder.append("Kérlek az alábbi linkre kattintva aktiváld email címedet:");
         stringBuilder.append("\n");
-        stringBuilder.append(URL + token);
+        stringBuilder.append( URL + "/activation?token=" + token);
 
         try {
             SimpleMailMessage message = new SimpleMailMessage();

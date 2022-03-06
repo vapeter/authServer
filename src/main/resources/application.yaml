@@ -32,5 +32,4 @@ spring:
       path: /h2
 
 app:
-  mail:
-    verficationURL: http://localhost:9000/activation?token=
+  baseURL: http://localhost:9000
