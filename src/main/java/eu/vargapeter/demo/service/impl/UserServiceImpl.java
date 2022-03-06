@@ -1,6 +1,6 @@
 package eu.vargapeter.demo.service.impl;
 
-import eu.vargapeter.config.Translator;
+import eu.vargapeter.demo.config.Translator;
 import eu.vargapeter.demo.exceptions.UserAlreadyExistsException;
 import eu.vargapeter.demo.log.model.LogType;
 import eu.vargapeter.demo.log.service.AuditService;
