@@ -1,7 +1,9 @@
 package eu.vargapeter.demo.log.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.Column;
@@ -21,6 +23,8 @@ import java.time.LocalDateTime;
 @Table(name = "audit")
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Audit implements Serializable {
 
     @Id
