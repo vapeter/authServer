@@ -83,7 +83,7 @@ public class UserServiceImpl implements UserService {
 
         if (userExists(userRegister.getEmail())) {
             throw new UserAlreadyExistsException(
-                    Translator.toLocale("log.newUser.alreadyExist")
+                    Translator.toLocale("log.newUser.alreadyExists")
             );
         }
 
