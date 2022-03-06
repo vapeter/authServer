@@ -75,7 +75,8 @@ public class RegisterUserController {
         VerificationToken verificationToken = verificationTokenService.findByToken(token);
 
         if (verificationToken == null) {
-            return new ResponseEntity("Érvénytelen token!", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(
+                    Translator.toLocale("message.activation.invalidToken"), HttpStatus.BAD_REQUEST);
         } else {
              User user = verificationToken.getUser();
 
@@ -83,16 +84,19 @@ public class RegisterUserController {
                  Timestamp currentTimeStamp = new Timestamp(System.currentTimeMillis());
 
                  if (verificationToken.getTimestamp().before(currentTimeStamp)) {
-                     return new ResponseEntity("A tokened lejárt!!", HttpStatus.BAD_REQUEST);
+                     return new ResponseEntity(
+                             Translator.toLocale("message.activation.timout"), HttpStatus.BAD_REQUEST);
                  } else {
                      user.setEnabled(true);
 
                      userService.saveUser(user);
 
-                     return new ResponseEntity("Sikeres aktiválás!", HttpStatus.OK);
+                     return new ResponseEntity(
+                             Translator.toLocale("message.activation.success"), HttpStatus.OK);
                  }
              }
         }
-        return new ResponseEntity("A felhasználó már aktivált!", HttpStatus.OK);
+        return new ResponseEntity(
+                Translator.toLocale("message.activation.alreadyUsed"), HttpStatus.OK);
     }
 }
